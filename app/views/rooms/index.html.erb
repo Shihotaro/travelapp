@@ -1,0 +1,25 @@
+<div class="container">
+<h1>施設一覧</h1>
+
+  <%= form_with method: "get", url: rooms_path, local: true do |f| %>
+    <%= f.text_field "roomaddress",placeholder:"エリア名を入力" %>
+    <%= f.text_field "keyword",placeholder:"キーワード名を入力" %>
+    <%= f.submit "検索" %>
+  <% end %>
+
+<h2><%= @rooms.count %>件見つかりました。</h2>
+
+<% @rooms.each do |room| %>
+  <div class="container">
+    <span>
+      <%= image_tag room.room_image.url %>
+    </span>
+    <span><%= room.roomname %></span>
+    <span><%= room.roomdetails %></span>
+    <span><%= room.roomrate %></span>
+    <span><%= room.created_at.strftime("%Y/%m/%d") %></span>
+    <span><%= link_to "詳細はこちら",new_reservation_path(rooms_id: room.id) %></span>
+  </div>
+<% end %>
+</div>
+
