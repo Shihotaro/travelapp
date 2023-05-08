@@ -4,7 +4,7 @@
 
 <h1>プロフィール</h1>
 <div>
-  <p>アイコン画像：<%= image_tag @user.icon_image.url %></p>
+  <p>アイコン画像：<%= image_tag @user.icon_image.url, size: "200x200" %></p>
   <p>名前：<%= @user.name %></p>
   <p>自己紹介：<%= @user.message %></p>
 </div>
