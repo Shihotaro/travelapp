@@ -2,7 +2,6 @@
 
 import "@hotwired/turbo-rails";
 import "controllers";
-import "turbolinks";
 
 //= require jquery
 //= require bootstrap-sprockets
