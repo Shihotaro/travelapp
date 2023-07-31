@@ -1,27 +1,22 @@
-<h1>予約画面</h1>
-
+<div class="container">
+  <h1>予約画面</h1>
   <div>
     <%= image_tag @room.room_image.url %>
   </div>
-
-<%= form_with  model: @reservation, local: true, url: reservations_confirm_path(@reservation) do |f| %>
-
-  <div>
-    <label>チェックイン</label>
-    <%= f.date_field :checkin %>
-  </div>
-
-  <div>
-    <label>チェックアウト</label>
-    <%= f.date_field :checkout %>
-  </div>
-
-  <div>
-    <label>人数</label>
-    <%= f.number_field :party %>
-  </div>
-
-  <%= link_to "戻る", 'javascript:history.back()' %>
-  <%= f.submit "確認する" %>
-
-<% end %>
+  <%= form_with  model: @reservation, local: true, url: reservations_confirm_path(@reservation) do |f| %>
+    <div>
+      <label>チェックイン</label>
+      <%= f.date_field :checkin %>
+    </div>
+    <div>
+      <label>チェックアウト</label>
+      <%= f.date_field :checkout %>
+    </div>
+    <div>
+      <label>人数</label>
+      <%= f.number_field :party %>
+    </div>
+    <%= link_to "戻る", 'javascript:history.back()' %>
+    <%= f.submit "確認する" %>
+  <% end %>
+</div>
