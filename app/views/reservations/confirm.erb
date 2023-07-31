@@ -1,0 +1,15 @@
+<h1>確認画面</h1>
+<div>
+  <%= @reservation.checkin %>
+  <%= @reservation.checkout %>
+  <%= @number_of_night.to_i %> 泊
+  <%= @reservation.party %> 人
+  <%= @amount %> 円
+</div>
+<%= form_with model: @reservation, url: reservations_path,method: "post", local: true do |f| %>
+  <%= f.hidden_field :checkin %>
+  <%= f.hidden_field :checkout %>
+  <%= f.hidden_field :party %>
+  <%= link_to "修正する", 'javascript:history.back()' %>
+  <%= f.submit "予約する" %>
+<% end %>
